@@ -51,16 +51,7 @@ export default class Video extends Component {
   }
 
   seek = (time, tolerance = 100) => {
-    if (Platform.OS === 'ios') {
-      this.setNativeProps({
-        seek: {
-          time,
-          tolerance
-        }
-      });
-    } else {
       this.setNativeProps({ seek: time });
-    }
   };
 
   presentFullscreenPlayer = () => {
